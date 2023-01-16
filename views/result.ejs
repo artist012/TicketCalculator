@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="css/icon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <title>Result</title>
+</head>
+<body style="text-align: center;">
+    <div class="card">
+        <div class="mt-5 text-center">
+            <div class="stats">
+                <h5><b>벌금</b></h5> <span><%= fine %> 원</span>
+            </div>
+            <div class="stats">
+                <h5><b>벌점</b></h5> <span><%= point %> 점</span>
+            </div>
+            <div class="stats">
+                <h5><b>구금</b></h5> <span><%= deten %> 분</span>
+            </div>
+            <% if(bail > 0) { %>
+                <div class="stats">
+                    <h5><b>보석금</b></h5> <span><%= bail %> 원<br>30 분</span>
+                </div>
+            <% } if(num != "X" && data != "X") { %>
+                <div class="stats">
+                    <h5><b><%= num %>번 총 조회 결과</b></h5> <span><%= data.total_results %></span>
+                </div>
+                <h4><b>결과</b></h4>
+                <% for(i=0;i < data.messages.length; i++) { %>
+                    <p><%= data.messages[i][0].content %></p>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+    <hr>
+    <div style="color: white;">
+        <button onClick="location.href='/dolphin'">&nbsp;&nbsp;&nbsp;&nbsp;<b>돌아가기</b>&nbsp;&nbsp;&nbsp;&nbsp;</button>
+    </div>
+</body>
+</html>

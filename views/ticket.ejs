@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="css/icon.ico">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Dolphin Sheriff</title>
+</head>
+<body>
+    <h1 style="text-align:center;"><b>돌핀 보안국 자동 처벌 계산 웹</b></h1>
+    <div>
+        <div style="width: 32%; float:left; margin-left:1%; margin-right:1%; text-align:center;" class="globaltag-xyliase-config4 globaltag-xyliase-config1 globaltag-xyliase-config2 globaltag-xyliase-config5" id="traffic">
+            <h2 style="text-align:center;" title="중범죄가 있을시 계산되지 않음"><b>도로교통법</b></h2>
+            <% for(i in traffic) { %>
+                <h3 title="<%=traffic[i].비고%>"><b><%=i%></b>
+                <label class="dThemeSwitch">
+                    <input class="configSwitchInput" type="checkbox" id="<%=i%>">
+                    <span class="slider round"></span>
+                </label>
+                </h3>
+            <% } %>
+        </div>
+        <div style="width: 32%; float:left; margin-right:1%; text-align:center;" class="globaltag-xyliase-config4 globaltag-xyliase-config1 globaltag-xyliase-config2 globaltag-xyliase-config5" id="felony">
+            <h2 style="text-align:center;" title="중범죄가 있을시 도로교통법은 계산되지 않음"><b>중범죄</b></h2>
+            <% for(i in felony) { %>
+                <h3 title="<%=felony[i].비고%>"><b><%=i%></b>
+                <label class="dThemeSwitch">
+                    <input class="configSwitchInput" type="checkbox" id="<%=i%>">
+                    <span class="slider round"></span>
+                </label>
+                </h3>
+            <% } %>
+        </div>
+        <div style="width: 32%; float:left; text-align:center; margin-right:1%;" class="globaltag-xyliase-config4 globaltag-xyliase-config1 globaltag-xyliase-config2 globaltag-xyliase-config5" id="official">
+            <h2 style="text-align:center;"><b>공무원법률</b></h2>
+            <% for(i in official) { %>
+                <h3 title="<%=official[i].비고%>"><b><%=i%></b>
+                <label class="dThemeSwitch">
+                    <input class="configSwitchInput" type="checkbox" id="<%=i%>">
+                    <span class="slider round"></span>
+                </label>
+                </h3>
+            <% } %>
+        </div>
+    </div>
+    <div class="globaltag-xyliase-config6 globaltag-xyliase-config1 globaltag-xyliase-config2 globaltag-xyliase-config5">
+        <div class="form-second">
+            <h4 title="뉴비 일시에만, 고유번호 입력" style="color: black;">뉴비 경고 검색(BETA)
+            <label class="dThemeSwitch">
+                <input class="configSwitchInput" type="checkbox" id="nbc" onchange="changeNbc()">
+                <span class="slider round"></span>
+            </label>
+            </h4>
+            <input type="number" style="display: none; color: black;" type="text" id='고유번호' size="22"><br><br><br>
+            <button id="calc">&nbsp;&nbsp;&nbsp;&nbsp;계산&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>
+    </div>
+</body>
+<script src="js/main.js"></script>
+</html>
