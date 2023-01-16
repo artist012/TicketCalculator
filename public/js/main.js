@@ -52,7 +52,7 @@ document.getElementById('calc').addEventListener('click', async() => {
         }
     })
 
-    if(deten > 120) {
+    if(deten > 120) { // 최대 구금시간 ex) 120분 넘어가면 120고정
         deten = 120;
     }
     
