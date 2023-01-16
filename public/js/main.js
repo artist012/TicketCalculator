@@ -33,7 +33,7 @@ document.getElementById('calc').addEventListener('click', async() => {
             let isCheck = document.getElementById(i).checked;
     
             if(isCheck) {
-                if(i == "운전면허증미소지" || i == "난폭운전" && felony == true) {
+                if(i == "운전면허증미소지" || i == "난폭운전" && felony == true) { // 중범죄가 있으면 도로교통법 위반은 처벌하지 않으나 운전면허미소지나 난폭운전은 처벌하므로 중법죄가 있을경우 따로처리
                     fine += parseInt(law.traffic[i].벌금)
                     deten += parseInt(law.traffic[i].구금)
     
